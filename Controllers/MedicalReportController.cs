@@ -1,16 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Models;
-
+using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 namespace MedicalApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class MedicalReportController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        readonly string pathToReports = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//scores";
 
         private readonly ILogger<MedicalReportController> _logger;
 
@@ -20,9 +18,17 @@ namespace MedicalApp.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] MedicalReport report)
+        public async void Post([FromBody] MedicalReport report)
         {
             _logger.LogInformation("Received Post");
+            // Set a variable to the Documents path.
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            // Write the specified text asynchronously to a new file named "WriteTextAsync.txt".
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(pathToReports, /*"WriteTextAsync.json"*/ report.patientInfo.Patient_id)))
+            {
+                await outputFile.WriteAsync(JsonConvert.SerializeObject(report, Formatting.Indented));
+            }
         }
     }
 }

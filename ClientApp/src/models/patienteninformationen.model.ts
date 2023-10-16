@@ -1,6 +1,6 @@
 export class Patienteninformationen {
-    aufnahmenummer! : string;
-    gender! : number;
+    Patient_id! : string;
+    gender! : string;
     birthdate! : Date;
     name! : string;
     examinationDate! : Date;

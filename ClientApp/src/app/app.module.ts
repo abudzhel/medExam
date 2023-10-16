@@ -13,8 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { PatienteninformationenComponent } from './patienteninformationen/patienteninformationen.component';
 import { PrehistoryComponent } from './prehistory/prehistory.component';
@@ -31,8 +29,6 @@ import { MedicalReportComponent } from './medical-report/medical-report.componen
   declarations: [
     AppComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     SideNavComponent,
     PatienteninformationenComponent,
     PrehistoryComponent,
@@ -61,7 +57,6 @@ import { MedicalReportComponent } from './medical-report/medical-report.componen
     RouterModule.forRoot([
       {
         path: '', component: HomeComponent, children: [
-          { path: '', component: CounterComponent },
           { path: 'patienteninformationen', component: PatienteninformationenComponent },
           { path: 'prehistory', component: PrehistoryComponent },
           { path: 'investigation', component: InvestigationComponent },

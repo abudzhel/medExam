@@ -68,8 +68,8 @@ export class FormService {
   });
 
   private infoForm: FormGroup<ControlsOf<Patienteninformationen>> = this.formBuilder.nonNullable.group({
-    aufnahmenummer: ["", Validators.required],
-    gender: [0, Validators.required],
+    Patient_id: ["Unknonwn", Validators.required],
+    gender: ["NB", Validators.required],
     birthdate: [new Date(), Validators.required],
     name: ["", Validators.required],
     examinationDate: [new Date(), Validators.required]
