@@ -1,10 +1,8 @@
-import { Injectable, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Investigation } from 'src/models/investigation.model';
-import { MedicalReport } from 'src/models/medical-report.model';
-import { Patienteninformationen } from 'src/models/patienteninformationen.model';
-import { Prehistory } from 'src/models/prehistory.model';
-import { ControlsOf } from 'src/utills/controls-of-type';
+import { Injectable, inject } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Investigation, PatientInfo, Prehistory, MedicalReport } from "../models";
+import { ControlsOf } from "../utills/controls-of-type";
+
 
 @Injectable({
   providedIn: 'root'
@@ -67,7 +65,7 @@ export class FormService {
     })
   });
 
-  private infoForm: FormGroup<ControlsOf<Patienteninformationen>> = this.formBuilder.nonNullable.group({
+  private infoForm: FormGroup<ControlsOf<PatientInfo>> = this.formBuilder.nonNullable.group({
     Patient_id: ["Unknonwn", Validators.required],
     gender: ["NB", Validators.required],
     birthdate: [new Date(), Validators.required],

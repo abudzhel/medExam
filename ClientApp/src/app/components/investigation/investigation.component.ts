@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Investigation } from 'src/models/investigation.model';
-import { ControlsOf } from 'src/utills/controls-of-type';
-import { FormService } from 'src/services/form.service';
+import { ControlsOf } from 'src/app/utills/controls-of-type';
+import { FormService } from 'src/app/services/form.service';
+import { Investigation } from 'src/app/models';
 
 @Component({
   selector: 'app-investigation',
@@ -16,7 +16,7 @@ export class InvestigationComponent {
   sliderFormatter(value: number): string {
     return value + ""
   }
-  
+
   sliderAnamestischFormatter(value: number): string {
     switch (value) {
       case 0:

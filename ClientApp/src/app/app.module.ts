@@ -12,28 +12,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { PatienteninformationenComponent } from './patienteninformationen/patienteninformationen.component';
-import { PrehistoryComponent } from './prehistory/prehistory.component';
-import { InvestigationComponent } from './investigation/investigation.component';
+import { HomeComponent } from './components/home/home.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { PrehistoryComponent } from './components/prehistory/prehistory.component';
+import { InvestigationComponent } from './components/investigation/investigation.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MedicalReportComponent } from './medical-report/medical-report.component';
+import { MedicalReportComponent } from './components/medical-report/medical-report.component';
+import { PatientInfoComponent } from './components/patient-info/patient-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SideNavComponent,
-    PatienteninformationenComponent,
     PrehistoryComponent,
     InvestigationComponent,
-    MedicalReportComponent
+    MedicalReportComponent,
+    PatientInfoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -57,7 +57,7 @@ import { MedicalReportComponent } from './medical-report/medical-report.componen
     RouterModule.forRoot([
       {
         path: '', component: HomeComponent, children: [
-          { path: 'patienteninformationen', component: PatienteninformationenComponent },
+          { path: 'patient-info', component: PatientInfoComponent },
           { path: 'prehistory', component: PrehistoryComponent },
           { path: 'investigation', component: InvestigationComponent },
           { path: 'medical-report', component: MedicalReportComponent }

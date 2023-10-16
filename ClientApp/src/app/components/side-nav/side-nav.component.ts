@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent {
-  links:{url:string, text:string}[] = [ 
-    {url: "patienteninformationen", text: "Patienteninformationen"},
+  links:{url:string, text:string}[] = [
+    {url: "patient-info", text: "Patienteninformationen"},
     {url: "prehistory", text: "Vorgeschichte"},
     // {url: "aktuelle-anamnese", text: "Aktuelle Anamnese"},
     // {url: "fragebogen", text: "Fragebogen"},

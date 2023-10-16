@@ -1,8 +1,9 @@
 import { Component, inject } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { Prehistory } from "src/models/prehistory.model";
-import { ControlsOf } from "src/utills/controls-of-type";
-import { FormService } from "src/services/form.service";
+import { Prehistory } from "src/app/models";
+import { FormService } from "src/app/services";
+import { ControlsOf } from "src/app/utills/controls-of-type";
+
 
 @Component({
   selector: 'app-prehistory',

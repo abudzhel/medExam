@@ -1,7 +1,6 @@
-import { Component, ViewChild, inject } from '@angular/core';
-import { InvestigationComponent } from '../investigation/investigation.component';
-import { ApiService } from 'src/services/api.service';
-import { FormService } from 'src/services/form.service';
+import { Component, inject } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { FormService } from 'src/app/services/form.service';
 
 @Component({
   selector: 'app-medical-report',
@@ -29,7 +28,7 @@ export class MedicalReportComponent {
       reader.readAsArrayBuffer(inputNode.files[0]);
     }
   }
-  
+
   uploadFile(event: Event) {
     const element = event.currentTarget as HTMLInputElement;
     let fileList: FileList | null = element.files;
