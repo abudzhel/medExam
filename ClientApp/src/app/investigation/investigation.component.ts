@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CaudalExam, Investigation, SmellExam, VisionExam } from 'src/models/investigation.model';
+import { FormGroup } from '@angular/forms';
+import { Investigation } from 'src/models/investigation.model';
 import { ControlsOf } from 'src/utills/controls-of-type';
-import { MedicalService } from '../../services/medical.service';
 import { FormService } from 'src/services/form.service';
+
 @Component({
   selector: 'app-investigation',
   templateUrl: './investigation.component.html',
@@ -11,26 +11,12 @@ import { FormService } from 'src/services/form.service';
 })
 export class InvestigationComponent {
   private formService = inject(FormService);
-  private medicalService = inject(MedicalService);
   form: FormGroup<ControlsOf<Investigation>> = this.formService.medicalReportForm.controls.investigation;
-
-  constructor() { }
-
-  ngOnInit() {
-    // this.form.valueChanges.subscribe(values => this.medicalService.setInvestigationFormData(this.form.getRawValue()))
-  }
-
-
-  // private formBuilder = inject(FormBuilder);
-
-  
-  onSelectedTabChange(event: any) {
-
-  }
 
   sliderFormatter(value: number): string {
     return value + ""
   }
+  
   sliderAnamestischFormatter(value: number): string {
     switch (value) {
       case 0:
@@ -48,6 +34,7 @@ export class InvestigationComponent {
     }
     return value + ""
   }
+
   sliderSoftPalateFormatter(value: number): string {
     switch (value) {
       case 0:
