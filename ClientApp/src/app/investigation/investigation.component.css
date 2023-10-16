@@ -1,0 +1,8 @@
+
+.slider-with-label {
+    align-items: center;
+}
+
+.slider-with-label > span {
+    padding-right: 1rem!important;
+}

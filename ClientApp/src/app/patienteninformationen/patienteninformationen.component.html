@@ -1,0 +1,30 @@
+<form [formGroup]="patientForm">
+  <div class="flex-col">
+    <mat-form-field appearance="outline" hideRequiredMarker>
+      <mat-label>aufnahmenummer</mat-label>
+      <input formControlName="aufnahmenummer" matInput required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" hideRequiredMarker>
+      <mat-label>gender</mat-label>
+      <input formControlName="gender" placeholder="gender" matInput required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" hideRequiredMarker>
+      <mat-label>Birth date</mat-label>
+      <input formControlName="birthdate" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" hideRequiredMarker>
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" hideRequiredMarker>
+      <mat-label>ExaminationDate</mat-label>
+      <input formControlName="examinationDate" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+</form>

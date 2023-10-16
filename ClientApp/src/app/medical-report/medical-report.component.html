@@ -1,0 +1,7 @@
+<div class="flex-col" style="padding: 1%;">
+    <button type="button" mat-raised-button (click)="fileInput.click()" style="width: 10%; ">Choose File</button>
+    <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+    <!-- <button mat-raised-button color="Save report">Save</button> -->
+
+    <button mat-raised-button (click)="onSaveButtonPressed()" style="width: 10%; margin-top: 1%;" >Save</button>
+</div>

@@ -1,0 +1,151 @@
+<form [formGroup]="form" style="padding-left: 1%;">
+  <mat-slide-toggle formControlName="isCranialNervesNormal">Is Cranial Nerves Normal?</mat-slide-toggle>
+  <!-------------------------- Cranial Exam Form Start ---------------------------->
+  <div class="left-right-container flex-col" *ngIf="form.controls.isCranialNervesNormal.value"
+    style="width:100%; justify-content: space-around">
+    <mat-slide-toggle formControlName="isSmellSenseNormal">Is Smell Sense Normal?</mat-slide-toggle>
+    <!-------------------------- Smell Exam Form Start ---------------------------->
+    <div formGroupName="smell" *ngIf="form.controls.isSmellSenseNormal.value"
+      style="width:50%; justify-content: space-around">
+      <h2>Smell</h2>
+      <div class="left-right-container flex-col">
+        <div class="left-right-container flex-row" style="width:100%; justify-content: space-around">
+          <mat-slider [min]="0" [max]="3" [step]="1" showTickMarks discrete [displayWith]="sliderAnamestischFormatter">
+            <input matSliderThumb formControlName="anamnestic" matInput>
+          </mat-slider>
+
+          <div formGroupName="sniffinSticks" class="left-right-container flex-row"
+            style="width:25%; justify-content: space-around">
+            <mat-form-field appearance="outline" hideRequiredMarker>
+              <input type="number" formControlName="actualVal" placeholder="actualVal" matInput required />
+            </mat-form-field>
+            <mat-form-field appearance="outline" hideRequiredMarker>
+              <input type="number" formControlName="maxVal" placeholder="maxVal" matInput required />
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-form-field appearance="outline" hideRequiredMarker>
+          <input formControlName="smellSenseNote" placeholder="smellSenseNote" matInput required />
+        </mat-form-field>
+      </div>
+    </div> <!-------------------------- Smell Exam Form End ---------------------------->
+
+    <mat-slide-toggle formControlName="isCaudalCranialNervesNormal">Is Caudal Cranial Nerves Normal?</mat-slide-toggle>
+    <!-------------------------- Caudal Exam Form Start ---------------------------->
+    <div formGroupName="caudal" *ngIf="form.controls.isCaudalCranialNervesNormal.value"
+      style="width:50%; justify-content: space-around">
+      <h2>Cranial</h2>
+      <div class="left-right-container flex-col" style="width:100%; justify-content: start">
+        <div class="left-right-container flex-row" style="width:100%; justify-content: start">
+          <mat-slide-toggle formControlName="isSoftPalateChecked">isSoftPalateChecked</mat-slide-toggle>
+          <mat-slider min="0" max="4" step="1" showTickMarks discrete [displayWith]="sliderSoftPalateFormatter"
+            *ngIf="form.controls.caudal.controls.isSoftPalateChecked.value">
+            <input matSliderThumb formControlName="SoftPalateLifts" matInput>
+          </mat-slider>
+        </div>
+        <div class="left-right-container flex-row" style="width:100%; justify-content: start">
+          <mat-slide-toggle formControlName="isGagChecked">isGagChecked</mat-slide-toggle>
+          <mat-slide-toggle formControlName="isRgereflexChecked2"
+            *ngIf="form.controls.caudal.controls.isGagChecked.value">isRgereflexChecked2</mat-slide-toggle>
+        </div>
+      </div>
+      <div class="left-right-container flex-row" style="width:100%; justify-content: start">
+        <mat-slide-toggle formControlName="isNAccessorius">isNAccessorius</mat-slide-toggle>
+
+        <div class="flex-col" *ngIf="form.controls.caudal.controls.isNAccessorius.value">
+
+          <div class="flex-row" class="slider-with-label">
+            <span>Left</span>
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+              <input matSliderThumb formControlName="leftSternocleidomastoidMuscle" matInput>
+            </mat-slider>
+          </div>
+
+          <div class="flex-row" class="slider-with-label">
+            <span>Left</span>
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+              <input matSliderThumb formControlName="leftTrapezius">
+            </mat-slider>
+          </div>
+
+        </div>
+
+        <div class="flex-col" *ngIf="form.controls.caudal.controls.isNAccessorius.value">
+
+          <div class="flex-row" class="slider-with-label">
+            <span>Right</span>
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+              <input matSliderThumb formControlName="rightSternocleidomastoidMuscle" matInput>
+            </mat-slider>
+          </div>
+
+          <div class="flex-row" class="slider-with-label">
+            <span>Right</span>
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+              <input matSliderThumb formControlName="rightTrapezius" matInput>
+            </mat-slider>
+          </div>
+
+        </div>
+
+
+      </div>
+      <mat-form-field appearance="outline" hideRequiredMarker style="width:100%; justify-content: space-around">
+        <input formControlName="caudalCranialNervesNote" placeholder="caudalCranialNervesNote" matInput required />
+      </mat-form-field>
+    </div> <!-------------------------- Caudal Exam Form End ---------------------------->
+    <!-------------------------- Visual Exam Start ---------------------------->
+    <mat-slide-toggle formControlName="isVisualNormal">Is Visual Normal?</mat-slide-toggle>
+    <div formGroupName="visual" class="flex-col" *ngIf="form.controls.isVisualNormal.value"
+      style="width:50%; justify-content: space-around">
+      <mat-slide-toggle formControlName="isSymmetrical">Is it Symmetrical?</mat-slide-toggle>
+      <div class="flex-row" style="justify-content: space-around">
+        <div class="flex-col" formGroupName="leftEye" name="left-eye" style="justify-content: space-around">
+          <span>Left Eye</span>
+          <mat-button-toggle-group formControlName="AboveTemporalOrNasal" name="AboveTemporalOrNasal">
+            <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
+            <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
+          </mat-button-toggle-group>
+          <mat-button-toggle-group formControlName="BelowTemporalOrNasal" name="BelowTemporalOrNasal">
+            <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
+            <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
+          </mat-button-toggle-group>
+          <div class="flex-row" style="justify-content: space-around">
+            <span>Visual</span>
+            <mat-slide-toggle formControlName="isCCEnabled">CC?</mat-slide-toggle>
+            <mat-form-field appearance="outline" hideRequiredMarker>
+              <input type="number" formControlName="eyeScore" placeholder="eyeScore" matInput required />
+            </mat-form-field>
+          </div>
+          <mat-slide-toggle formControlName="isFrostedGlass">Frosted Glass?</mat-slide-toggle>
+          <mat-slide-toggle formControlName="isRedDesaturation">is Red Desaturation?</mat-slide-toggle>
+          <mat-slide-toggle formControlName="isPainWhenMoving">is Pain WhenMoving?</mat-slide-toggle>
+
+        </div>
+        <div formGroupName="rightEye" class="flex-col" style="justify-content: space-around"
+          *ngIf="!form.controls.visual.controls.isSymmetrical.value">
+          <span>Right Eye</span>
+          <mat-button-toggle-group formControlName="AboveTemporalOrNasal" name="AboveTemporalOrNasal">
+            <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
+            <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
+          </mat-button-toggle-group>
+          <mat-button-toggle-group formControlName="BelowTemporalOrNasal" name="BelowTemporalOrNasal">
+            <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
+            <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
+          </mat-button-toggle-group>
+          <div class="flex-row" style="justify-content: space-around">
+            <span>Visual</span>
+            <mat-slide-toggle formControlName="isCCEnabled">CC?</mat-slide-toggle>
+            <mat-form-field appearance="outline" hideRequiredMarker>
+              <input type="number" formControlName="eyeScore" placeholder="eyeScore" matInput required />
+            </mat-form-field>
+          </div>
+          <mat-slide-toggle formControlName="isFrostedGlass">Frosted Glass?</mat-slide-toggle>
+          <mat-slide-toggle formControlName="isRedDesaturation">is Red Desaturation?</mat-slide-toggle>
+          <mat-slide-toggle formControlName="isPainWhenMoving">is Pain WhenMoving?</mat-slide-toggle>
+        </div>
+      </div>
+      <input formControlName="visualActivityNote" placeholder="visualActivityNote" matInput required />
+    </div> <!-------------------------- Visual Exam End ---------------------------->
+  </div> <!-------------------------- Cranial Exam Form End ---------------------------->
+</form>
