@@ -12,7 +12,7 @@
       <div class="left-right-container flex-col" style=" gap: 1rem;">
         <div class="left-right-container flex-row" style="width:100%; justify-content: space-between;">
           <div class="slider-container">
-            <mat-slider [min]="0" [max]="3" [step]="1" showTickMarks discrete [displayWith]="sliderAnamestischFormatter">
+            <mat-slider [min]="0" [max]="3" [step]="1" showTickMarks discrete [displayWith]="sliderAnamestischFormatter" color="accent">
               <input matSliderThumb formControlName="anamnestic" matInput>
             </mat-slider>
           </div>
@@ -41,7 +41,7 @@
       <div class="left-right-container flex-col" style="width:100%; justify-content: start">
         <div class="left-right-container flex-row" style="width:100%; justify-content: start">
           <mat-slide-toggle formControlName="isSoftPalateChecked">isSoftPalateChecked</mat-slide-toggle>
-          <mat-slider min="0" max="4" step="1" showTickMarks discrete [displayWith]="sliderSoftPalateFormatter"
+          <mat-slider min="0" max="4" step="1" showTickMarks discrete [displayWith]="sliderSoftPalateFormatter" color="accent"
             *ngIf="form.controls.caudal.controls.isSoftPalateChecked.value">
             <input matSliderThumb formControlName="softPalateLifts" matInput>
           </mat-slider>
@@ -59,14 +59,14 @@
 
           <div class="flex-row" class="slider-with-label">
             <span>Left</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
               <input matSliderThumb formControlName="leftSternocleidomastoidMuscle" matInput>
             </mat-slider>
           </div>
 
           <div class="flex-row" class="slider-with-label">
             <span>Left</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
               <input matSliderThumb formControlName="leftTrapezius">
             </mat-slider>
           </div>
@@ -77,14 +77,14 @@
 
           <div class="flex-row" class="slider-with-label">
             <span>Right</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
               <input matSliderThumb formControlName="rightSternocleidomastoidMuscle" matInput>
             </mat-slider>
           </div>
 
           <div class="flex-row" class="slider-with-label">
             <span>Right</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter">
+            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
               <input matSliderThumb formControlName="rightTrapezius" matInput>
             </mat-slider>
           </div>
