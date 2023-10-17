@@ -2,18 +2,18 @@
   <div class="flex-col">
     <h1> Patienteninformationen</h1>
 
-    <mat-form-field appearance="outline" hideRequiredMarker>
+    <mat-form-field appearance="outline" hideRequiredMarker color="accent">
       <mat-label>Patient Id</mat-label>
       <input formControlName="patientId" matInput required />
     </mat-form-field>
 
-    <mat-button-toggle-group formControlName="gender" aria-label="Font Style">
+    <mat-button-toggle-group formControlName="gender" aria-label="Font Style" >
       <mat-button-toggle value="Male">Male</mat-button-toggle>
       <mat-button-toggle value="Female">Female</mat-button-toggle>
       <mat-button-toggle value="NB">Non-Binary</mat-button-toggle>
     </mat-button-toggle-group>
 
-    <mat-form-field appearance="outline" hideRequiredMarker>
+    <mat-form-field appearance="outline" hideRequiredMarker color="accent">
       <mat-label>Birth date</mat-label>
       <input formControlName="birthdate" matInput [matDatepicker]="birthDatePicker">
       <mat-hint>MM/DD/YYYY</mat-hint>
@@ -21,12 +21,12 @@
       <mat-datepicker #birthDatePicker></mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" hideRequiredMarker>
+    <mat-form-field appearance="outline" hideRequiredMarker color="accent">
       <mat-label>Name</mat-label>
       <input formControlName="name" matInput required />
     </mat-form-field>
 
-    <mat-form-field appearance="outline" hideRequiredMarker>
+    <mat-form-field appearance="outline" hideRequiredMarker color="accent">
       <mat-label>ExaminationDate</mat-label>
       <input formControlName="examinationDate" matInput [matDatepicker]="picker">
       <mat-hint>MM/DD/YYYY</mat-hint>
