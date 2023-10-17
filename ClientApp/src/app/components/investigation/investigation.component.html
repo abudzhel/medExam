@@ -35,68 +35,76 @@
 
     <mat-slide-toggle formControlName="isCaudalCranialNervesNormal">Is Caudal Cranial Nerves Normal?</mat-slide-toggle>
     <!-------------------------- Caudal Exam Form Start ---------------------------->
-    <div class="outlined" formGroupName="caudal" *ngIf="form.controls.isCaudalCranialNervesNormal.value"
-      style="justify-content: space-around">
-      <h2>Cranial</h2>
-      <div class="left-right-container flex-col" style="width:100%; justify-content: start">
-        <div class="left-right-container flex-row" style="width:100%; justify-content: start">
-          <mat-slide-toggle formControlName="isSoftPalateChecked">isSoftPalateChecked</mat-slide-toggle>
-          <mat-slider min="0" max="4" step="1" showTickMarks discrete [displayWith]="sliderSoftPalateFormatter" color="accent"
-            *ngIf="form.controls.caudal.controls.isSoftPalateChecked.value">
-            <input matSliderThumb formControlName="softPalateLifts" matInput>
-          </mat-slider>
-        </div>
-        <div class="left-right-container flex-row" style="width:100%; justify-content: start">
-          <mat-slide-toggle formControlName="isGagChecked">isGagChecked</mat-slide-toggle>
-          <mat-slide-toggle formControlName="isRgereflexChecked2"
-            *ngIf="form.controls.caudal.controls.isGagChecked.value">isRgereflexChecked2</mat-slide-toggle>
-        </div>
+    <div class="outlined" formGroupName="caudal" *ngIf="form.controls.isCaudalCranialNervesNormal.value">
+    <h2>Cranial</h2>
+      <div class="flex-row">
+        <mat-form-field appearance="outline" hideRequiredMarker style="width:100%; justify-content: space-around" color="accent">
+          <input formControlName="caudalCranialNervesNote" placeholder="caudalCranialNervesNote" matInput required />
+        </mat-form-field>
+          <div class="caudal-subform-container">
+            <mat-slide-toggle formControlName="isSoftPalateChecked">isSoftPalateChecked</mat-slide-toggle>
+            <ng-container *ngIf="form.controls.caudal.controls.isSoftPalateChecked.value">
+              <mat-slider min="0" max="4" step="1" showTickMarks discrete [displayWith]="sliderSoftPalateFormatter" color="accent">
+                <input matSliderThumb formControlName="softPalateLifts" matInput>
+              </mat-slider>
+
+            </ng-container>
+
+          </div>
+          <div class="caudal-subform-container">
+            <mat-slide-toggle formControlName="isGagChecked">isGagChecked</mat-slide-toggle>
+            <ng-container *ngIf="form.controls.caudal.controls.isGagChecked.value">
+              <mat-slide-toggle formControlName="isRgereflexChecked2">isRgereflexChecked2</mat-slide-toggle>
+            </ng-container>
+
+          </div>
+          <div class="caudal-subform-container">
+            <mat-slide-toggle formControlName="isNAccessorius">isNAccessorius</mat-slide-toggle>
+            <ng-container *ngIf="form.controls.caudal.controls.isNAccessorius.value">
+              <div class="flex-row">
+
+              <div class="flex-col">
+
+                <div class="flex-row" class="slider-with-label">
+                  <span>Left</span>
+                  <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
+                    <input matSliderThumb formControlName="leftSternocleidomastoidMuscle" matInput>
+                  </mat-slider>
+                </div>
+
+                <div class="flex-row" class="slider-with-label">
+                  <span>Left</span>
+                  <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
+                    <input matSliderThumb formControlName="leftTrapezius">
+                  </mat-slider>
+                </div>
+
+              </div>
+
+              <div class="flex-col">
+
+                <div class="flex-row" class="slider-with-label">
+                  <span>Right</span>
+                  <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
+                    <input matSliderThumb formControlName="rightSternocleidomastoidMuscle" matInput>
+                  </mat-slider>
+                </div>
+
+                <div class="flex-row" class="slider-with-label">
+                  <span>Right</span>
+                  <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
+                    <input matSliderThumb formControlName="rightTrapezius" matInput>
+                  </mat-slider>
+                </div>
+
+              </div>
+            </div>
+            </ng-container>
+
+          </div>
       </div>
-      <div class="left-right-container flex-row" style="width:100%; justify-content: start">
-        <mat-slide-toggle formControlName="isNAccessorius">isNAccessorius</mat-slide-toggle>
-
-        <div class="flex-col" *ngIf="form.controls.caudal.controls.isNAccessorius.value">
-
-          <div class="flex-row" class="slider-with-label">
-            <span>Left</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
-              <input matSliderThumb formControlName="leftSternocleidomastoidMuscle" matInput>
-            </mat-slider>
-          </div>
-
-          <div class="flex-row" class="slider-with-label">
-            <span>Left</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
-              <input matSliderThumb formControlName="leftTrapezius">
-            </mat-slider>
-          </div>
-
-        </div>
-
-        <div class="flex-col" *ngIf="form.controls.caudal.controls.isNAccessorius.value">
-
-          <div class="flex-row" class="slider-with-label">
-            <span>Right</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
-              <input matSliderThumb formControlName="rightSternocleidomastoidMuscle" matInput>
-            </mat-slider>
-          </div>
-
-          <div class="flex-row" class="slider-with-label">
-            <span>Right</span>
-            <mat-slider [min]="0" [max]="5" [step]="1" showTickMarks discrete [displayWith]="sliderFormatter" color="accent">
-              <input matSliderThumb formControlName="rightTrapezius" matInput>
-            </mat-slider>
-          </div>
-
-        </div>
-
-
-      </div>
-      <mat-form-field appearance="outline" hideRequiredMarker style="width:100%; justify-content: space-around" color="accent">
-        <input formControlName="caudalCranialNervesNote" placeholder="caudalCranialNervesNote" matInput required />
-      </mat-form-field>
-    </div> <!-------------------------- Caudal Exam Form End ---------------------------->
+    </div>
+    <!-------------------------- Caudal Exam Form End ---------------------------->
     <!-------------------------- Visual Exam Start ---------------------------->
     <mat-slide-toggle formControlName="isVisualNormal">Is Visual Normal?</mat-slide-toggle>
     <div formGroupName="visual" class="flex-col outlined"  *ngIf="form.controls.isVisualNormal.value"
