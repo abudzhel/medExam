@@ -1,18 +1,21 @@
 <form [formGroup]="form">
+  <h1> Untersuchung </h1>
   <mat-slide-toggle formControlName="isCranialNervesNormal">Is Cranial Nerves Normal?</mat-slide-toggle>
   <!-------------------------- Cranial Exam Form Start ---------------------------->
-  <div class="left-right-container flex-col" *ngIf="form.controls.isCranialNervesNormal.value"
+  <div class="left-right-container flex-col outlined" *ngIf="form.controls.isCranialNervesNormal.value"
     style="width:100%; justify-content: space-around">
     <mat-slide-toggle formControlName="isSmellSenseNormal">Is Smell Sense Normal?</mat-slide-toggle>
     <!-------------------------- Smell Exam Form Start ---------------------------->
-    <div formGroupName="smell" *ngIf="form.controls.isSmellSenseNormal.value"
-      style="width:50%; justify-content: space-around">
+    <div class="outlined" formGroupName="smell" *ngIf="form.controls.isSmellSenseNormal.value"
+      style="justify-content: space-around">
       <h2>Smell</h2>
-      <div class="left-right-container flex-col">
-        <div class="left-right-container flex-row" style="width:100%; justify-content: space-around">
-          <mat-slider [min]="0" [max]="3" [step]="1" showTickMarks discrete [displayWith]="sliderAnamestischFormatter">
-            <input matSliderThumb formControlName="anamnestic" matInput>
-          </mat-slider>
+      <div class="left-right-container flex-col" style=" gap: 1rem;">
+        <div class="left-right-container flex-row" style="width:100%; justify-content: space-between;">
+          <div class="slider-container">
+            <mat-slider [min]="0" [max]="3" [step]="1" showTickMarks discrete [displayWith]="sliderAnamestischFormatter">
+              <input matSliderThumb formControlName="anamnestic" matInput>
+            </mat-slider>
+          </div>
 
           <div formGroupName="sniffinSticks" class="left-right-container flex-row"
             style="width:25%; justify-content: space-around">
@@ -32,15 +35,15 @@
 
     <mat-slide-toggle formControlName="isCaudalCranialNervesNormal">Is Caudal Cranial Nerves Normal?</mat-slide-toggle>
     <!-------------------------- Caudal Exam Form Start ---------------------------->
-    <div formGroupName="caudal" *ngIf="form.controls.isCaudalCranialNervesNormal.value"
-      style="width:50%; justify-content: space-around">
+    <div class="outlined" formGroupName="caudal" *ngIf="form.controls.isCaudalCranialNervesNormal.value"
+      style="justify-content: space-around">
       <h2>Cranial</h2>
       <div class="left-right-container flex-col" style="width:100%; justify-content: start">
         <div class="left-right-container flex-row" style="width:100%; justify-content: start">
           <mat-slide-toggle formControlName="isSoftPalateChecked">isSoftPalateChecked</mat-slide-toggle>
           <mat-slider min="0" max="4" step="1" showTickMarks discrete [displayWith]="sliderSoftPalateFormatter"
             *ngIf="form.controls.caudal.controls.isSoftPalateChecked.value">
-            <input matSliderThumb formControlName="SoftPalateLifts" matInput>
+            <input matSliderThumb formControlName="softPalateLifts" matInput>
           </mat-slider>
         </div>
         <div class="left-right-container flex-row" style="width:100%; justify-content: start">
@@ -96,17 +99,17 @@
     </div> <!-------------------------- Caudal Exam Form End ---------------------------->
     <!-------------------------- Visual Exam Start ---------------------------->
     <mat-slide-toggle formControlName="isVisualNormal">Is Visual Normal?</mat-slide-toggle>
-    <div formGroupName="visual" class="flex-col" *ngIf="form.controls.isVisualNormal.value"
-      style="width:50%; justify-content: space-around">
+    <div formGroupName="visual" class="flex-col outlined"  *ngIf="form.controls.isVisualNormal.value"
+      style="justify-content: space-around">
       <mat-slide-toggle formControlName="isSymmetrical">Is it Symmetrical?</mat-slide-toggle>
       <div class="flex-row" style="justify-content: space-around">
         <div class="flex-col" formGroupName="leftEye" name="left-eye" style="justify-content: space-around">
           <span>Left Eye</span>
-          <mat-button-toggle-group formControlName="AboveTemporalOrNasal" name="AboveTemporalOrNasal">
+          <mat-button-toggle-group formControlName="aboveTemporalOrNasal" name="aboveTemporalOrNasal">
             <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
             <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
           </mat-button-toggle-group>
-          <mat-button-toggle-group formControlName="BelowTemporalOrNasal" name="BelowTemporalOrNasal">
+          <mat-button-toggle-group formControlName="belowTemporalOrNasal" name="belowTemporalOrNasal">
             <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
             <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
           </mat-button-toggle-group>
@@ -125,11 +128,11 @@
         <div formGroupName="rightEye" class="flex-col" style="justify-content: space-around"
           *ngIf="!form.controls.visual.controls.isSymmetrical.value">
           <span>Right Eye</span>
-          <mat-button-toggle-group formControlName="AboveTemporalOrNasal" name="AboveTemporalOrNasal">
+          <mat-button-toggle-group formControlName="aboveTemporalOrNasal" name="aboveTemporalOrNasal">
             <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
             <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
           </mat-button-toggle-group>
-          <mat-button-toggle-group formControlName="BelowTemporalOrNasal" name="BelowTemporalOrNasal">
+          <mat-button-toggle-group formControlName="belowTemporalOrNasal" name="belowTemporalOrNasal">
             <mat-button-toggle value="Temporal">Temporal</mat-button-toggle>
             <mat-button-toggle value="Nasal">Nasal</mat-button-toggle>
           </mat-button-toggle-group>
@@ -145,7 +148,9 @@
           <mat-slide-toggle formControlName="isPainWhenMoving">is Pain WhenMoving?</mat-slide-toggle>
         </div>
       </div>
-      <input formControlName="visualActivityNote" placeholder="visualActivityNote" matInput required />
+      <mat-form-field appearance="outline" hideRequiredMarker>
+        <input formControlName="visualActivityNote" placeholder="visualActivityNote" matInput required />
+      </mat-form-field>
     </div> <!-------------------------- Visual Exam End ---------------------------->
   </div> <!-------------------------- Cranial Exam Form End ---------------------------->
 </form>

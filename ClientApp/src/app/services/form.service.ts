@@ -29,7 +29,7 @@ export class FormService {
       // TODO: Fix the name later with Christian WÃƒÂ¼rgereflex geprüf
       isGagChecked: false,
       isNAccessorius: false,
-      SoftPalateLifts: 0,
+      softPalateLifts: 0,
       // TODO: Fix the name later with Christian WÃƒÂ¼rgeflex auslÃƒÂ¶sbar
       isRgereflexChecked2: false,
       leftSternocleidomastoidMuscle: 0,
@@ -43,8 +43,8 @@ export class FormService {
     visual: this.formBuilder.nonNullable.group({
       isSymmetrical: false,
       leftEye: this.formBuilder.nonNullable.group({
-        AboveTemporalOrNasal: '',
-        BelowTemporalOrNasal: '',
+        aboveTemporalOrNasal: '',
+        belowTemporalOrNasal: '',
         isCCEnabled: false,
         eyeScore: 0,
         isFrostedGlass: false,
@@ -52,8 +52,8 @@ export class FormService {
         isPainWhenMoving: false,
       }),
       rightEye: this.formBuilder.nonNullable.group({
-        AboveTemporalOrNasal: '',
-        BelowTemporalOrNasal: '',
+        aboveTemporalOrNasal: '',
+        belowTemporalOrNasal: '',
         isCCEnabled: false,
         eyeScore: 0,
         isFrostedGlass: false,
@@ -66,7 +66,7 @@ export class FormService {
   });
 
   private infoForm: FormGroup<ControlsOf<PatientInfo>> = this.formBuilder.nonNullable.group({
-    Patient_id: ["Unknonwn", Validators.required],
+    patientId: ["Unknonwn", Validators.required],
     gender: ["NB", Validators.required],
     birthdate: [new Date(), Validators.required],
     name: ["", Validators.required],

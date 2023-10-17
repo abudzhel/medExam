@@ -1,5 +1,5 @@
 export class PatientInfo {
-    Patient_id! : string;
+    patientId! : string;
     gender! : string;
     birthdate! : Date;
     name! : string;

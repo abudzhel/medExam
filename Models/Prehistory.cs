@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Models
 {
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class Prehistory
     {
-        public string? actualAnamnesys { get; set; }
-        public string? relevantAdditionalInformation { get; set; }
-        public string? previousDiagnostics { get; set; }
-        public string? previousTherapy { get; set; }
-        public string? diagnosticList { get; set; }
-        public string? exposureHistory { get; set; }
-        public string? socialHistory { get; set; }
-        public string? familyHistory { get; set; }
+        public string? ActualAnamnesys { get; set; }
+        public string? RelevantAdditionalInformation { get; set; }
+        public string? PreviousDiagnostics { get; set; }
+        public string? PreviousTherapy { get; set; }
+        public string? DiagnosticList { get; set; }
+        public string? ExposureHistory { get; set; }
+        public string? SocialHistory { get; set; }
+        public string? FamilyHistory { get; set; }
     }
 }

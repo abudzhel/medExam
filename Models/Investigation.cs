@@ -1,66 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Models
 {
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class Investigation
     {
-        public bool isCranialNervesNormal { get; set; }
-        public bool isSmellSenseNormal { get; set; }
-        public SmellExam? smell { get; set; }
-        public bool isCaudalCranialNervesNormal { get; set; }
+        public bool IsCranialNervesNormal { get; set; }
+        public bool IsSmellSenseNormal { get; set; }
+        public SmellExam? Smell { get; set; }
+        public bool IsCaudalCranialNervesNormal { get; set; }
 
-        public CaudalExam? caudal { get; set; }
-        public bool isVisualNormal { get; set; }
-        public VisionExam? visual { get; set; }
+        public CaudalExam? Caudal { get; set; }
+        public bool IsVisualNormal { get; set; }
+        public VisionExam? Visual { get; set; }
     }
-    public class sniffinSticksResult
+
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
+    public class SniffinSticksResult
     {
-        public int actualVal { get; set; }
-        public int maxVal { get; set; }
+        public int ActualVal { get; set; }
+        public int MaxVal { get; set; }
     }
+
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class SmellExam
     {
-        public int anamnestic { get; set; }
-
-        public sniffinSticksResult? sniffinSticks { get; set; }
-
-        public string? smellSenseNote;
+        public int Anamnestic { get; set; }
+        public SniffinSticksResult? SniffinSticks { get; set; }
+        public string? SmellSenseNote;
     }
 
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class CaudalExam
     {
-        public bool isSoftPalateChecked { get; set; }
-        public bool isGagChecked { get; set; }
-        public bool isNAccessorius { get; set; }
+        public bool IsSoftPalateChecked { get; set; }
+        public bool IsGagChecked { get; set; }
+        public bool IsNAccessorius { get; set; }
         public int SoftPalateLifts { get; set; }
-        public bool isRgereflexChecked2 { get; set; }
-        public int leftSternocleidomastoidMuscle { get; set; }
-        public int rightSternocleidomastoidMuscle { get; set; }
-        public int leftTrapezius { get; set; }
-        public int rightTrapezius { get; set; }
-        public string? caudalCranialNervesNote { get; set; }
+        public bool IsRgereflexChecked2 { get; set; }
+        public int LeftSternocleidomastoidMuscle { get; set; }
+        public int RightSternocleidomastoidMuscle { get; set; }
+        public int LeftTrapezius { get; set; }
+        public int RightTrapezius { get; set; }
+        public string? CaudalCranialNervesNote { get; set; }
     }
 
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class VisionExam
     {
-        public bool isSymmetrical { get; set; }
-        public EyeExam? leftEye { get; set; }
-        public EyeExam? rightEye { get; set; }
-        public string? visualActivityNote { get; set; }
+        public bool IsSymmetrical { get; set; }
+        public EyeExam? LeftEye { get; set; }
+        public EyeExam? RightEye { get; set; }
+        public string? VisualActivityNote { get; set; }
 
     }
-    
+
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class EyeExam
     {
         public string? AboveTemporalOrNasal { get; set; }
         public string? BelowTemporalOrNasal { get; set; }
-        public bool isCCEnabled { get; set; }
-        public int eyeScore { get; set; }
-        public bool isFrostedGlass { get; set; }
-        public bool isRedDesaturation { get; set; }
-        public bool isPainWhenMoving { get; set; }
+        public bool IsCCEnabled { get; set; }
+        public int EyeScore { get; set; }
+        public bool IsFrostedGlass { get; set; }
+        public bool IsRedDesaturation { get; set; }
+        public bool IsPainWhenMoving { get; set; }
     }
 }

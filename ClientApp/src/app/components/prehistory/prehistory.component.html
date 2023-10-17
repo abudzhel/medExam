@@ -1,32 +1,45 @@
 <form [formGroup]="form">
     <div class="flex-col">
+      <h1>Vorgeschichte</h1>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="actualAnamnesys" placeholder="actualAnamnesys" matInput />
+          <mat-label>Actual anamnesys</mat-label>
+          <input formControlName="actualAnamnesys" matInput />
         </mat-form-field>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="relevantAdditionalInformation" placeholder="relevantAdditionalInformation" matInput
-                 />
+          <mat-label>Relevant additional information</mat-label>
+          <input formControlName="relevantAdditionalInformation" matInput/>
         </mat-form-field>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="previousDiagnostics" placeholder="previousDiagnostics" matInput  />
+          <mat-label>Previous diagnostics</mat-label>
+          <input formControlName="previousDiagnostics" matInput />
         </mat-form-field>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="previousTherapy" placeholder="previousTherapy" matInput  />
+          <mat-label>Previous therapy</mat-label>
+          <input formControlName="previousTherapy" matInput  />
         </mat-form-field>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="diagnosticList" placeholder="diagnosticList" matInput  />
+          <mat-label>Diagnostic list</mat-label>
+          <input formControlName="diagnosticList" matInput  />
         </mat-form-field>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="exposureHistory" placeholder="exposureHistory" matInput  />
+          <mat-label>Exposure history</mat-label>
+          <input formControlName="exposureHistory" matInput  />
         </mat-form-field>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="socialHistory" placeholder="socialHistory" matInput  />
+          <mat-label>Social history</mat-label>
+          <input formControlName="socialHistory" matInput  />
         </mat-form-field>
+
         <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="previousTherapy" placeholder="previousTherapy" matInput  />
-        </mat-form-field>
-        <mat-form-field appearance="outline" hideRequiredMarker>
-            <input formControlName="familyHistory" placeholder="familyHistory" matInput  />
+          <mat-label>Family history</mat-label>
+          <input formControlName="familyHistory" placeholder="familyHistory" matInput  />
         </mat-form-field>
     </div>
 </form>

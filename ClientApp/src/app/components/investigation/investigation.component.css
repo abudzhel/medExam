@@ -6,3 +6,32 @@
 .slider-with-label > span {
     padding-right: 1rem!important;
 }
+
+.outlined {
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 1rem;
+  width: 100%;
+}
+mat-slide-toggle {
+  padding: 0.5rem;
+}
+
+.slider-container {
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 50%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  .mat-mdc-slider {
+    width: 100% !important;
+  }
+}
+
+::ng-deep .mdc-slider__value-indicator-container {
+  height: 64px !important;
+  .mdc-slider__value-indicator {
+    height: inherit !important;
+  }
+}

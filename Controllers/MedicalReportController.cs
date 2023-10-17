@@ -25,7 +25,7 @@ namespace MedicalApp.Controllers
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
             // Write the specified text asynchronously to a new file named "WriteTextAsync.txt".
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(pathToReports, /*"WriteTextAsync.json"*/ report.patientInfo.Patient_id)))
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(pathToReports, /*"WriteTextAsync.json"*/ report.PatientInfo.PatientId)))
             {
                 await outputFile.WriteAsync(JsonConvert.SerializeObject(report, Formatting.Indented));
             }
