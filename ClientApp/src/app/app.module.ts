@@ -24,6 +24,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MedicalReportComponent } from './components/medical-report/medical-report.component';
 import { PatientInfoComponent } from './components/patient-info/patient-info.component';
+import { SelectPatientComponent } from './components/select-patient/select-patient.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { PatientInfoComponent } from './components/patient-info/patient-info.com
     PrehistoryComponent,
     InvestigationComponent,
     MedicalReportComponent,
-    PatientInfoComponent
+    PatientInfoComponent,
+    SelectPatientComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -57,6 +60,7 @@ import { PatientInfoComponent } from './components/patient-info/patient-info.com
     RouterModule.forRoot([
       {
         path: '', component: HomeComponent, children: [
+          {path: 'select-patient', component: SelectPatientComponent},
           { path: 'patient-info', component: PatientInfoComponent },
           { path: 'prehistory', component: PrehistoryComponent },
           { path: 'investigation', component: InvestigationComponent },

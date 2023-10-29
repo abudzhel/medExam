@@ -69,19 +69,19 @@ export class FormService {
     patientId: ["Unknonwn", Validators.required],
     gender: ["NB", Validators.required],
     birthdate: [new Date(), Validators.required],
-    name: ["", Validators.required],
+    name: [""],
     examinationDate: [new Date(), Validators.required]
   });
 
   private prehistoryForm: FormGroup<ControlsOf<Prehistory>> = this.formBuilder.nonNullable.group({
-    actualAnamnesys: ["", Validators.required],
-    relevantAdditionalInformation: ["", Validators.required],
-    previousDiagnostics: ["", Validators.required],
-    previousTherapy: ["", Validators.required],
-    diagnosticList: ["", Validators.required],
-    exposureHistory: ["", Validators.required],
-    socialHistory: ["", Validators.required],
-    familyHistory: ["", Validators.required]
+    actualAnamnesys: [""],
+    relevantAdditionalInformation: [""],
+    previousDiagnostics: [""],
+    previousTherapy: [""],
+    diagnosticList: [""],
+    exposureHistory: [""],
+    socialHistory: [""],
+    familyHistory: [""]
   });
 
   medicalReportForm: FormGroup<ControlsOf<MedicalReport>> = this.formBuilder.nonNullable.group({

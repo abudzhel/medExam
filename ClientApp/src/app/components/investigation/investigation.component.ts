@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { ControlsOf } from 'src/app/utills/controls-of-type';
 import { FormService } from 'src/app/services/form.service';
 import { Investigation } from 'src/app/models';
+import { ApiService } from 'src/app/services';
 
 @Component({
   selector: 'app-investigation',

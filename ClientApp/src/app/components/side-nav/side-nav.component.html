@@ -1,7 +1,9 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" opened><mat-nav-list>
       <h1> Medical app</h1>
-      <a mat-list-item *ngFor="let link of links" [routerLink]="link.url">{{ link.text }}</a>
+      <a mat-list-item routerLink="select-patient"> Select Patient </a>
+
+      <a mat-list-item *ngFor="let link of links" [routerLink]="link.url"  [disabled]="true">{{ link.text }}</a>
     </mat-nav-list></mat-sidenav>
   <mat-sidenav-content style = "padding: 1%;"><ng-content></ng-content></mat-sidenav-content>
 </mat-sidenav-container>

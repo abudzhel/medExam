@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { PatientInfo } from "src/app/models";
-import { FormService } from "src/app/services";
+import { ApiService, FormService } from "src/app/services";
 import { ControlsOf } from "src/app/utills/controls-of-type";
 
 
@@ -13,7 +13,7 @@ import { ControlsOf } from "src/app/utills/controls-of-type";
 })
 export class PatientInfoComponent {
   private formService = inject(FormService);
+  private apiService = inject(ApiService);
 
   form: FormGroup<ControlsOf<PatientInfo>> = this.formService.medicalReportForm.controls.patientInfo;
-
 }

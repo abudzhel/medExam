@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { Prehistory } from "src/app/models";
-import { FormService } from "src/app/services";
+import { ApiService, FormService } from "src/app/services";
 import { ControlsOf } from "src/app/utills/controls-of-type";
 
 
